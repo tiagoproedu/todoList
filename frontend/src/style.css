@@ -1,18 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+html{
+    height: 100vh;
+}
 body{
     display: flex;
     justify-content: center;
-    background-color: antiquewhite;
+    font-family: "Fredoka", sans-serif;
+    color: white;
+    background: no-repeat;
+    background-image: linear-gradient(to right, #153396, #2f549e, #2f549e, #2f549e, #153396);
 }
 .toDo{
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
 }
 fieldset{
     width: 150%;
 }
 button{
     width: 50%;
-    border-radius: 5%;
-    box-shadow: 0 0 2px gray;
+    border-radius: 3rem;
+    box-shadow: 2px 1px 3px #153396;
+}
+.sublinhado{
+    text-decoration: line-through;
+}
+button:hover{
+    cursor: pointer;
 }

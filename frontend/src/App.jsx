@@ -15,6 +15,11 @@ function App() {
 
   const [todo, setTodo] = useState([]);
   const todoRef = useRef(null);
+  const [check, setCheck] = useState(false);
+  const handleCheckboxChange = () =>{
+    setCheck(!check);
+  }
+  
 
   function addTodo() {
     const newTodo = todoRef.current.value;
@@ -48,7 +53,7 @@ function App() {
   }, []);
 
   function todoList(task, index){
-    return (<div key={index}><input type="checkbox" id={task}/><label for={task}>{task}</label></div>);
+    return (<div key={index}><input type="checkbox" id={task} checked={check} onChange={handleCheckboxChange}/><label className={check ? 'sublinhado' : ''} for={task}>{task}</label></div>);
   }
   
   return (
