@@ -1,16 +1,16 @@
-const todoList = [];
+const todoList = []; //Onde são armazenadas as tarefas depois de criadas
 
 class TodoRepository{
 
-    create(todo){
+    create(todo){ //Método que cria as tarefas
         todoList.push(todo);
         
         return todo;
     }
 
-    listAll(){
+    listAll(){ //Método para listar todas as tarefas
         return todoList;
     }
 }
 
-module.exports = new TodoRepository();
+module.exports = new TodoRepository(); //Exportando já criando um novo repositorie
