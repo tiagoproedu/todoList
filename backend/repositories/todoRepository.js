@@ -11,6 +11,16 @@ class TodoRepository{
     listAll(){ //Método para listar todas as tarefas
         return todoList;
     }
+
+    delete(todo){
+        const index = todoList.indexOf(todo);
+
+        if(index > -1) {
+            todoList.splice(index, 1); //Remove o item do array todoList
+        }
+
+        return todoList;
+    }
 }
 
 module.exports = new TodoRepository(); //Exportando já criando um novo repositorie

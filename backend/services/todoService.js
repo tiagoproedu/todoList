@@ -8,6 +8,10 @@ class TodoService{
     listAll = () => { //Método do service para listar todas as tarefas
         return TodoRepository.listAll();
     }
+
+    delete = (todo) => { //Método do service para remover uma tarefa
+        return TodoRepository.delete(todo);
+    }
 }
 
 module.exports = new TodoService(); //Exportando o service já criando um novo

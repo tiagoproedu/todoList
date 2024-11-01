@@ -14,6 +14,14 @@ class TodoController{
 
         return res.status(200).json(todo);
     }
+
+    delete = (req, res) => {
+        const todoData = req.body;
+
+        const todo = TodoService.delete(todoData);
+
+        return res.status(204).json(todo);
+    }
 }
 
 module.exports = new TodoController(); //Aqui já optei por exportar criando um novo controller ao inves de fazer isso no routes

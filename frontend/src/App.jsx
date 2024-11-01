@@ -46,6 +46,25 @@ function App() {
       })
   }
 
+  function removeTodo(task){
+    fetch('http://localhost:8080/todo', {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({tarefa: task})
+    })
+    .then(res => {
+      if(!res.ok){
+        throw new Error('Erro ao deletar tarefa');
+      }
+      setTodo(prevTodo => prevTodo.filter(t => t !== task)); //Atualiza o estado local removendo a tarefa
+    })
+    .catch(error => {
+      console.error('Erro: ', error);
+    });
+  }
+
   useEffect(() => {
     fetch('http://localhost:8080/todo')
       .then(response => response.json())
@@ -61,11 +80,14 @@ function App() {
 
   function todoList(task, index) { // Cria os itens um por um da lista de tarefas
     return (
-      <div key={index}>
-        <input type="checkbox" id={task} checked={check[index] || false} onChange={() => handleCheckboxChange(index)} />
-        <label className={check[index] ? 'sublinhado' : ''} for={task}> {/*Adiciona o sublinhado nas tarefas concluidas*/}
-          {task}
-        </label>
+      <div key={index} className="task">
+        <div>
+          <input type="checkbox" id={task} checked={check[index] || false} onChange={() => handleCheckboxChange(index)} />
+          <label className={check[index] ? 'sublinhado' : ''} for={task}> {/*Adiciona o sublinhado nas tarefas concluidas*/}
+            {task}
+          </label>
+        </div>
+        <a onClick={() => removeTodo(task)}><img src="icon-lixeira.svg" alt="lixeira"/></a>
       </div>
     );
   }
@@ -76,7 +98,7 @@ function App() {
 
       <div className="toDo">
         <input type="text" ref={todoRef} /> {/*Manda a referência para o useRef*/}
-        <button onClick={addTodo}>Adicionar</button> {/*Quando clica no botão manda a tarefa para a lista*/}
+        <button onClick={addTodo} id="addButton">ADICIONAR</button> {/*Quando clica no botão manda a tarefa para a lista*/}
         <fieldset>
           <legend>Tarefas:</legend>
           <ul>
