@@ -12,7 +12,7 @@ class TodoRepository{
         return todoList;
     }
 
-    delete(todo){
+    delete(todo){ //Método para excluir uma tarefa do array
         const index = todoList.indexOf(todo);
 
         if(index > -1) {

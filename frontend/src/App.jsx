@@ -25,7 +25,7 @@ function App() {
     const newTodo = todoRef.current.value;
     setTodo([...todo, newTodo]);
 
-    fetch('http://localhost:8080/todo', { // Manda uma requisição ao servidor
+    fetch('http://localhost:8080/todo', { // Manda uma requisição para o backend
       method: 'POST', // Método para mandar tarefa para o backend
       headers: {
         'Content-Type': 'application/json'
@@ -46,13 +46,13 @@ function App() {
       })
   }
 
-  function removeTodo(task){
-    fetch('http://localhost:8080/todo', {
+  function removeTodo(task){ //Remove uma tarefa da lista
+    fetch('http://localhost:8080/todo', { //Manda um requisição para o backend
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({tarefa: task})
+      body: JSON.stringify({tarefa: task}) //Body que será enviado para o backend
     })
     .then(res => {
       if(!res.ok){
@@ -87,7 +87,7 @@ function App() {
             {task}
           </label>
         </div>
-        <a onClick={() => removeTodo(task)}><img src="icon-lixeira.svg" alt="lixeira"/></a>
+        <a onClick={() => removeTodo(task)}><img src="icon-lixeira.svg" alt="lixeira"/></a> {/* Icone usado para remover o item da lista quando é clicado */}
       </div>
     );
   }

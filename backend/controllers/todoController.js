@@ -15,7 +15,7 @@ class TodoController{
         return res.status(200).json(todo);
     }
 
-    delete = (req, res) => {
+    delete = (req, res) => { //Método para excluir uma tarefa
         const todoData = req.body;
 
         const todo = TodoService.delete(todoData);
