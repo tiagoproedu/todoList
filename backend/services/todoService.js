@@ -12,6 +12,10 @@ class TodoService{
     delete = (todo) => { //Método do service para remover uma tarefa
         return TodoRepository.delete(todo);
     }
+
+    update(oldTask, newTask) {
+        return TodoRepository.update(oldTask, newTask);
+    }
 }
 
 module.exports = new TodoService(); //Exportando o service já criando um novo

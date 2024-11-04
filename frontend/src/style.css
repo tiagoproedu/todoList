@@ -10,6 +10,9 @@ body{
     background: no-repeat;
     background-image: linear-gradient(to right, #153396, #2f549e, #2f549e, #2f549e, #153396);
 }
+h1{
+    text-align: center;
+}
 .toDo{
     display: flex;
     flex-direction: column;
@@ -17,7 +20,7 @@ body{
     gap: 1rem;
 }
 fieldset{
-    width: 150%;
+    width: 100%;
 }
 #addButton{
     width: 60%;
@@ -30,10 +33,11 @@ fieldset{
 button:hover{
     cursor: pointer;
 }
-.task{
+.tasks{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 15rem;
 }
 img{
     width: 1rem;

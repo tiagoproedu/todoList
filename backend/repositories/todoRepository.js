@@ -21,6 +21,14 @@ class TodoRepository{
 
         return todoList;
     }
+
+    update(oldTask, newTask) { //Método para atualizar uma tarefa no array
+        const index = todoList.indexOf(oldTask);
+        if(index > -1) {
+            todoList[index] = newTask; //Atualiza a tarefa no array todoList
+        }
+        return todoList;
+    }
 }
 
 module.exports = new TodoRepository(); //Exportando já criando um novo repositorie

@@ -22,6 +22,14 @@ class TodoController{
 
         return res.status(204).json(todo);
     }
+
+    update = (req, res) => {
+        const { oldTask, newTask } = req.body;
+
+        const updatedTodoList = TodoService.update(oldTask, newTask);
+
+        return res.status(200).json(updatedTodoList);
+    }
 }
 
 module.exports = new TodoController(); //Aqui já optei por exportar criando um novo controller ao inves de fazer isso no routes
