@@ -1,9 +1,11 @@
 const todoList = []; //Onde são armazenadas as tarefas depois de criadas
+let idCounter = 1; //Contador que gera ID's únicos
 
 class TodoRepository{
 
     create(todo){ //Método que cria as tarefas
-        todoList.push(todo);
+        const newTodo = { id: idCounter++, ...todo };
+        todoList.push(newTodo);
         
         return todo;
     }

@@ -41,6 +41,7 @@ function App() {
         return response.json();
       })
       .then(data => {
+        todoRef.current.value = '';
         console.log('Tarefa adicionada com sucesso: ', data);
       })
       .catch(error => {
@@ -104,16 +105,16 @@ function App() {
       .then(data => setTodo(data)); // Traz a lista de tarefas
   }, []);
 
-  function handleCheckboxChange(index) { // Muda o estado da checkbox
+  function handleCheckboxChange(task) { // Muda o estado da checkbox
     setCheck(prevCheck => ({
       ...prevCheck, //espalhando todas as propriedades do objeto prevCheck
-      [index]: !prevCheck[index] //está adicionando ou atualizando a propriedade com chave index, invertendo o seu valor(!)
+      [task]: !prevCheck[task] //está adicionando ou atualizando a propriedade com chave index, invertendo o seu valor(!)
     }));
   }
 
-  function todoList(task, index) { // Cria os itens um por um da lista de tarefas
+  function todoList(task) { // Cria os itens um por um da lista de tarefas
     return (
-      <div key={index} className="task">
+      <div key={task} className="task">
         {editMode === task ? (
           <div className="editing">
             <input type="text" value={editValue} onChange={(e) => setEditValue(e.target.value)} />
@@ -123,8 +124,8 @@ function App() {
         ) : (
           <div className="tasks">
             <div>
-              <input type="checkbox" id={task} checked={check[index] || false} onChange={() => handleCheckboxChange(index)} />
-              <label className={check[index] ? 'sublinhado' : ''} for={task}> {/*Adiciona o sublinhado nas tarefas concluidas*/}
+              <input type="checkbox" id={`checkbox-${task}`} checked={check[task] || false} onChange={() => handleCheckboxChange(task)} />
+              <label className={check[task] ? 'sublinhado' : ''} for={`checkbox-${task}`}> {/*Adiciona o sublinhado nas tarefas concluidas*/}
                 {task}
               </label>
             </div>
