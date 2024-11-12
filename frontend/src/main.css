@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+html{
+    height: 100%;
+}
+body{
+    margin: 0;
+    height: 100%;
+    color: white;
+}
+#root{
+    height: 100%;
+    background: no-repeat;
+    background-image: linear-gradient(to right, #153396, #2f549e, #2f549e, #2f549e, #153396);
+    font-family: 'Fredoka', sans-serif;
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

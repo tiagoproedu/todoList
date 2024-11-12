@@ -1,0 +1,45 @@
+#main{
+    padding-top: 4rem;
+    width: 60%;
+    height: 40%;
+}
+h1{
+    text-align: center;
+}
+.toDo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+fieldset{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35%;
+}
+ul{
+    padding: 0;
+}
+#addButton{
+    border-radius: 5px;
+    width: 8rem;
+}
+.sublinhado{
+    text-decoration: line-through;
+}
+button:hover{
+    cursor: pointer;
+}
+.tasks{
+    display: flex;
+    gap: 1rem;
+    justify-content: space-around;
+    align-items: center;
+}
+img{
+    width: 1rem;
+}
+a :hover{
+    cursor: pointer;
+}
