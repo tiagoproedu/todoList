@@ -5,17 +5,17 @@ function Login() {
         <>
             <div id="login">
                 <h1>ToDo App</h1>
-                <form action="">
+                <form id="formLogin">
                     <label htmlFor="email">Digite seu email:</label>
-                    <input type="email" name="email" placeholder="digite seu email..." />
+                    <input type="email" name="email" placeholder="digite seu email..." style={{height: '1rem'}}/>
                     <br />
                     <label htmlFor="senha">Digite sua senha:</label>
-                    <input type="password" name="senha" id="senha" placeholder="digite sua senha..." />
+                    <input type="password" name="senha" id="senha" placeholder="digite sua senha..." style={{height: '1rem'}}/>
                     <br />
                 </form>
                 <div id="botoes">
                     <button>Acessar</button>
-                    <button>Cadastrar-se</button>
+                    <button><a href="/cadastro">Cadastrar-se</a></button>
                 </div>
             </div>
         </>

@@ -142,7 +142,7 @@ function Home() {
 
   return (
     <>
-      <div id="main">
+      <div id="home">
         <h1>TO-DO LIST</h1>
 
         <div className="toDo">
