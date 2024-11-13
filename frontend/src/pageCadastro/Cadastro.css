@@ -1,0 +1,24 @@
+#cadastro{
+    width: 40%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+h1{
+    margin: 0;
+}
+#formCadastro{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+section{
+    display: flex;
+    flex-direction: column;
+}
