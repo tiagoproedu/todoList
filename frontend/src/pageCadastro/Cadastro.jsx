@@ -37,7 +37,7 @@ function Cadastro() {
                 setSenha("");
                 setConfirmaSenha("");
                 alert("Usuário cadastrado com sucesso!");
-                window.location.href = 'http://localhost:5173/'
+                window.location.href = 'http://localhost:5173/' //Redireciona para a pagina de login apos o envio do formulário
             } else {
                 alert("Erro ao cadastrar o usuário.")
             }
