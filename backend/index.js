@@ -2,6 +2,7 @@ const express = require('express');
 const todoRoutes = require('./routes/todoRoutes');
 const app = express();
 const cors = require('cors');
+const userRoutes = require('./routes/userRoutes');
 
 app.use(cors()); //Usado para que não haja problema nas requisições entre o cliente e o servidor
 
@@ -16,3 +17,4 @@ app.get('/', (req, res) => {
 });
 
 app.use("/todo", todoRoutes); //Quando o front requisita usando o /todo quem vai assumir é o todoRoutes
+app.use("/user", userRoutes);

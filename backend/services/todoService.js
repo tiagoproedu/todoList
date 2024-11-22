@@ -13,7 +13,7 @@ class TodoService{
         return TodoRepository.delete(todo);
     }
 
-    update(oldTask, newTask) {
+    update(oldTask, newTask) { //Método do service para editar uma tarefa
         return TodoRepository.update(oldTask, newTask);
     }
 }
